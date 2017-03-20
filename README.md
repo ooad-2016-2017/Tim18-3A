@@ -1,5 +1,6 @@
 # Tim18-3A
-Tema: **Teamer**
+**Tema:** Teamer
+
 **Članovi tima:**
   1. Amel Sažić
   2. Amer Purić
