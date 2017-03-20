@@ -4,3 +4,5 @@
   2. Amer Purić
   3. Armin Omerbegović
   - [ ] Saža dao taskove
+  - [ ] Saža došao na vrijeme
+  - [x] Purić i Omerbegović došli na vrijeme
