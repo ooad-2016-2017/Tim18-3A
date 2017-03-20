@@ -3,4 +3,4 @@
   1. Amel Sažić
   2. Amer Purić
   3. Armin Omerbegović
-  - [] Saža podijeli taskove
+  - [ ] Saža dao taskove
