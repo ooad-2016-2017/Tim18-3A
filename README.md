@@ -1,4 +1,4 @@
-﻿# Tim18-3A
+# Tim18-3A
 **Tema:** Teamer
 
 **Članovi tima:**
