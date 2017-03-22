@@ -13,13 +13,18 @@
 - Poslije završenog treninga odnosno utakmice trener kreira izvještaj o tom događaju tako što ocjenjuje svakog igrača pojedinačno. Zatim taj izvještaj/e šalje posebno svakom igraču odnosno menadžeru na uvid. Igrač ima uvid u svaki svoj izvještaj , a i sam menadžer u uvid svih igrača nakon završetka određenog događaja. Tako menadžer može odlužiti da li igrač zadovoljava određene kriterije napretka za svoj klub.
 ## Funkcionalnosti
 - Mogućnost kreiranja i brisanja tima, dodavanje/uklanjanje trenera i igrača.
-- Dodavanje i uređivanja galerije sa slikama.
-- Uvid u finansije.
-- Uvid u raspored treninga i utakmica.
-- Kreiranje događaja kao što su treninzi, sastanci, utakmice itd..
+- Mogućnost dodavanja i uređivanja galerije sa slikama.
+- Mogućnost uvida u finansije.
+- Mogućnost uvida u raspored treninga i utakmica.
+- Mogućnost kreiranje događaja kao što su treninzi, sastanci, utakmice itd..
+- Mogućnost slanja tačne lokacije održavanja događaja (google mape).
 - Mogućnost obavještavanja o terminima.
-- Mogućnost slanja invitacija za događaje.
+- Mogućnost slanja poziva za događaje.
 - Mogućnost prihvatanja/odbijanja poziva na događaj (uz prateći komentar).
+- Mogućnost kreiranja izvještaja o napredtku igrača i slanja istih.
+- Mogućnost slanja individualnih i grupnih poruka.
+- Mogućnost pregleda ostvarenih rezultata.
+- Mogućnost prikazivanja posljednjeg rezultata preko arduino uređaja.
 ## Akteri
 1. **Manager**: Vrši registraciju i ima mogućnost kreiranja, dodavanje trenera i igrača u tim. Ima mogućnost obavještavanja o terminima i lokacijama održavanja treninga i sastanaka, te mogućnost kreiranja galerija i dodavanja slika sa treninga i utakmica.
 2. **Trener**: Vrši dodavanje igrača u tim, kreira plan raspored treninga za nadolazeći mjesec i postavke tima za narednu utakmicu, te evidenciju o napretku za svakog igrača pojedinačno. Ima mogućnost obavještavanja menadžera i igrača.
