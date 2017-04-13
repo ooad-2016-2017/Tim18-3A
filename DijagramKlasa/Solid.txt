@@ -1,0 +1,17 @@
+Princip 1 - Single Responsibility Principle (SRP):
+Ovaj princip nije ispostovan jer se u pojedinim klasama ne nalaze samo oni atributi i metode koji su strogo vezani za nju.
+
+Princip 2 - Open Closed Principle (OCP):
+Ovaj princip je ispostovan. Promjene u implementacijama klasa ne uticu na modifikaciju neke druge klase.
+Za primjer mozemo uzeti dodavanje novogt tipa korisnika ili dodavanja novog tipa dogadjaja, a da ne utjece na ostale tipove.
+
+Princip 3 - Liskov Substitution Pprinciple (LSP):
+U nasem dijagramu klasa imamo apstraktnu klasu Korisnik iz koje su naslijedjene tri klase(Manager, Trener i Igrac). 
+Sve ove klase naslijedjuje sve atribute i metode bazne klase, tako da je princip ispostovan.
+
+Princip 4 - Dependency Inversion Principle (DIP):
+Kao što je navedeno u LSP principu, klase Manager, Trener i Igrac ovise od bazne(apstraktne) klase Korisnik, na osnovu koje se ne može instancirati objekat. 
+Time ja zadovoljen i ovaj princip.
+
+Princip 5 - Interface Segregation Principle (ISP):
+Ovaj princip je ispostovan. Ne postoji medjusobna ovisnost klasa(jedna klasa ne utjece na drugu).
