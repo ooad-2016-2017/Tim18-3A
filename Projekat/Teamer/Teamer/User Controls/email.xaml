@@ -1,0 +1,22 @@
+﻿<UserControl
+    x:Class="Teamer.User_Controls.email"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Teamer.User_Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Background="Gainsboro"></Border>
+        <Border Grid.Column="1" Background="White"></Border>
+        <Image Source="/Images/email.png"></Image>
+        <TextBox Grid.Column="1" x:Name="passwordTextBox" Foreground="White" FontSize="25" PlaceholderText ="e-mail"></TextBox>
+    </Grid>
+</UserControl>
