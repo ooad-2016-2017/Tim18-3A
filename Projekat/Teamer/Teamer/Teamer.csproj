@@ -99,6 +99,12 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User Controls\Birth.xaml.cs">
+      <DependentUpon>Birth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\DodajSliku.xaml.cs">
+      <DependentUpon>DodajSliku.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\email.xaml.cs">
       <DependentUpon>email.xaml</DependentUpon>
     </Compile>
@@ -111,8 +117,17 @@
     <Compile Include="User Controls\Registration-Login.xaml.cs">
       <DependentUpon>Registration-Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\TeamButton.xaml.cs">
+      <DependentUpon>TeamButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\username.xaml.cs">
       <DependentUpon>username.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenadzerIzborTima.xaml.cs">
+      <DependentUpon>MenadzerIzborTima.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenadzerTim.xaml.cs">
+      <DependentUpon>MenadzerTim.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
@@ -126,9 +141,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\email.png" />
+    <Content Include="Images\image.png" />
     <Content Include="Images\lock.png" />
     <Content Include="Images\Logo.png" />
     <Content Include="Images\LogoProba.fw.png" />
+    <Content Include="Images\plus.png" />
+    <Content Include="Images\team.png" />
     <Content Include="Images\usericon.ico" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -148,6 +166,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="User Controls\Birth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User Controls\DodajSliku.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="User Controls\email.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,7 +190,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="User Controls\TeamButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="User Controls\username.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MenadzerIzborTima.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MenadzerTim.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
