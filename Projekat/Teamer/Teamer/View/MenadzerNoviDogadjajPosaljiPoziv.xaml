@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="Teamer.View.MenadzerNoviDogadjajPosaljiPoziv"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Teamer.User_Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="6*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.ColumnSpan="4" Background="DeepSkyBlue"></Border>
+            <Border Grid.Row="1" Grid.ColumnSpan="4" Background="Gainsboro"></Border>
+
+            <Button Grid.Column="3" HorizontalAlignment="Right" Margin="5,5,10,5" MaxHeight="50" MaxWidth="50" Background="DeepSkyBlue">
+                <Viewbox>
+                    <Image Source="/Images/x.png" MaxHeight="40" MaxWidth="40"></Image>
+                </Viewbox>
+            </Button>
+
+            <StackPanel Grid.ColumnSpan="3" Orientation="Horizontal" Margin="20,0,0,0">
+                <Button Margin="10,0,10,0" FontSize="15" Foreground="White" Background="DeepSkyBlue">NOVI DOGAĐAJ</Button>
+                <Button Margin="10,0,10,0" FontSize="15" Foreground="White" Background="DeepSkyBlue">POŠALJI POZIV</Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Orientation="Vertical" HorizontalAlignment="Stretch" Margin="50,50,50,50">
+                <local:PretragaKontrola Margin="10,10,10,10" HorizontalAlignment="Stretch" MaxHeight="30"></local:PretragaKontrola>
+                <ListView x:Name="listaUsera" HorizontalAlignment="Stretch" Margin="10,10,10,10" MaxHeight="400" MinHeight="300" SelectionMode="Multiple">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.RowSpan="2" Grid.ColumnSpan="3" Background="White"></Border>
+                                
+                                <Image Grid.RowSpan="2" Source="/Images/usericon.ico" MaxHeight="30" MaxWidth="30"></Image>
+                                <TextBlock Grid.Column="1" Text="Name Surname" Foreground="Black" FontSize="13" HorizontalAlignment="Stretch"></TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Text="e-mail" Foreground="Gray" FontSize="10" HorizontalAlignment="Stretch"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListViewItem></ListViewItem>
+                    <ListViewItem></ListViewItem>
+                    <ListViewItem></ListViewItem>
+                    <ListViewItem></ListViewItem>
+                    <ListViewItem></ListViewItem>
+                </ListView>
+                <local:OznaciSveKontrola HorizontalAlignment="Stretch" Margin="10,10,10,10"></local:OznaciSveKontrola>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

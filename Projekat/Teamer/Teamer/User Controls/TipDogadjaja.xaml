@@ -1,21 +1,25 @@
 ﻿<UserControl
-    x:Class="Teamer.User_Controls.Birth"
+    x:Class="Teamer.User_Controls.TipDogadjaja"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Teamer.User_Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="300"
+    d:DesignHeight="50"
     d:DesignWidth="400">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="6*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Border Background="Gainsboro"></Border>
-        <Border Grid.Column="1" Background="Gainsboro"></Border>
-        <CalendarDatePicker Grid.Column="1" HorizontalAlignment="Right" FontSize="10"></CalendarDatePicker>
+        <Border Grid.Column="1" Background="White"></Border>
+        <Image Source="/Images/email.png"></Image>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Stretch" FontSize="10">
+            <ComboBoxItem>Sastanak</ComboBoxItem>
+            <ComboBoxItem>Trening</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </UserControl>

@@ -17,9 +17,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Teamer.User_Controls
 {
-    public sealed partial class Birth : UserControl
+    public sealed partial class ListItemTemplate : UserControl
     {
-        public Birth()
+        public ListItemTemplate()
         {
             this.InitializeComponent();
         }
