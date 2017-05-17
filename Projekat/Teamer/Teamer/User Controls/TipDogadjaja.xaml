@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Border Background="Gainsboro"></Border>
         <Border Grid.Column="1" Background="White"></Border>
-        <Image Source="/Images/email.png"></Image>
+        <Image Source="/Images/Icons/Event.png"></Image>
         <ComboBox Grid.Column="1" HorizontalAlignment="Stretch" FontSize="10">
             <ComboBoxItem>Sastanak</ComboBoxItem>
             <ComboBoxItem>Trening</ComboBoxItem>

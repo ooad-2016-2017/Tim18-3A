@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Border Background="Gainsboro"></Border>
         <Border Grid.Column="1" Background="White"></Border>
-        <Image Source="/Images/usericon.ico"></Image>
+        <Image Source="/Images/Icons/Users.png"></Image>
         <TextBox Grid.Column="1" x:Name="pretragaTekstBox" FontSize="10" PlaceholderText ="Pretraga"></TextBox>
     </Grid>
 </UserControl>

@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Border Background="Gainsboro"></Border>
         <Border Grid.Column="1" Background="White"></Border>
-        <Image Source="/Images/email.png"></Image>
+        <Image Source="/Images/Icons/Mail.png"></Image>
         <TextBox Grid.Column="1" x:Name="passwordTextBox" FontSize="10" PlaceholderText ="e-mail"></TextBox>
     </Grid>
 </UserControl>

@@ -20,12 +20,12 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
                 <Button Background="DeepSkyBlue" MaxHeight="50" MaxWidth="50" HorizontalAlignment="Right">
                     <Viewbox>
-                        <Image Source="/Images/email.png"></Image>
+                        <Image Source="/Images/Icons/Inbox.png"></Image>
                     </Viewbox>
                 </Button>
                 <Button Background="DeepSkyBlue" MaxHeight="50" MaxWidth="50" HorizontalAlignment="Right">
                     <Viewbox>
-                        <Image Source="/Images/usericon.ico"></Image>
+                        <Image Source="/Images/Icons/Profile.png"></Image>
                     </Viewbox>
                 </Button>
             </StackPanel>
