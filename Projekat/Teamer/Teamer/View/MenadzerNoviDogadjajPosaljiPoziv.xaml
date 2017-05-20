@@ -35,9 +35,9 @@
 
             <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Orientation="Vertical" HorizontalAlignment="Stretch" Margin="50,50,50,50">
                 <local:PretragaKontrola Margin="10,10,10,10" HorizontalAlignment="Stretch" MaxHeight="30"></local:PretragaKontrola>
-                <ListView x:Name="listaUsera" HorizontalAlignment="Stretch" Margin="10,10,10,10" MaxHeight="400" MinHeight="300" SelectionMode="Multiple">
+                <ListView x:Name="listaUsera" HorizontalAlignment="Stretch" Margin="10,10,10,10" MaxHeight="350" MinHeight="200" SelectionMode="Multiple" Background="Transparent">
                     <ListView.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="x:String">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition></RowDefinition>
@@ -45,22 +45,31 @@
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                                    <ColumnDefinition Width="7*"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <Border Grid.RowSpan="2" Grid.ColumnSpan="3" Background="White"></Border>
-                                
+
                                 <Image Grid.RowSpan="2" Source="/Images/usericon.ico" MaxHeight="30" MaxWidth="30"></Image>
-                                <TextBlock Grid.Column="1" Text="Name Surname" Foreground="Black" FontSize="13" HorizontalAlignment="Stretch"></TextBlock>
+                                <TextBlock Grid.Column="1" Text="{x:Bind}" Foreground="Black" FontSize="13" HorizontalAlignment="Stretch"></TextBlock>
                                 <TextBlock Grid.Row="1" Grid.Column="1" Text="e-mail" Foreground="Gray" FontSize="10" HorizontalAlignment="Stretch"></TextBlock>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                    <ListViewItem></ListViewItem>
-                    <ListViewItem></ListViewItem>
-                    <ListViewItem></ListViewItem>
-                    <ListViewItem></ListViewItem>
-                    <ListViewItem></ListViewItem>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Background" Value="White"></Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <x:String>Armin Omerbegović</x:String>
+                    <x:String>Amel Sažić</x:String>
+                    <x:String>Amer Purić</x:String>
+                    <x:String>Armin Omerbegović</x:String>
+                    <x:String>Amel Sažić</x:String>
+                    <x:String>Amer Purić</x:String>
+                    <x:String>Armin Omerbegović</x:String>
+                    <x:String>Amel Sažić</x:String>
+                    <x:String>Amer Purić</x:String>
                 </ListView>
                 <local:OznaciSveKontrola HorizontalAlignment="Stretch" Margin="10,10,10,10"></local:OznaciSveKontrola>
             </StackPanel>

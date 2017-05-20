@@ -153,6 +153,9 @@
     <Compile Include="View\MenadzerTim.xaml.cs">
       <DependentUpon>MenadzerTim.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\pomocna.xaml.cs">
+      <DependentUpon>pomocna.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
@@ -260,6 +263,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MenadzerTim.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\pomocna.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

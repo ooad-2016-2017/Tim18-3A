@@ -11,11 +11,11 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Border Grid.ColumnSpan="2" Background="White"></Border>
-        <TextBlock Text="Označi sve" Foreground="Black" VerticalAlignment="Center" Margin="10,0,5,0"></TextBlock>
-        <ToggleSwitch Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,10,0"></ToggleSwitch>
+        <TextBlock Grid.Column="1" Text="Označi sve" Foreground="Black" VerticalAlignment="Center" Margin="5,0,10,0"></TextBlock>
+        <ToggleSwitch HorizontalAlignment="left" VerticalAlignment="Center" Margin="10,0,5,0"></ToggleSwitch>
     </Grid>
 </UserControl>
