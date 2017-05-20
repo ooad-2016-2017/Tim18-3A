@@ -168,6 +168,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\email.png" />
+    <Content Include="Images\Icons\Calendar.png" />
+    <Content Include="Images\Icons\Description.png" />
+    <Content Include="Images\Icons\Error.png" />
+    <Content Include="Images\Icons\Inbox.png" />
+    <Content Include="Images\Icons\Event.png" />
+    <Content Include="Images\Icons\Mail.png" />
+    <Content Include="Images\Icons\Password.png" />
+    <Content Include="Images\Icons\Placeholder.png" />
+    <Content Include="Images\Icons\Profile.png" />
+    <Content Include="Images\Icons\User.png" />
+    <Content Include="Images\Icons\Users.png" />
     <Content Include="Images\image.png" />
     <Content Include="Images\lock.png" />
     <Content Include="Images\Logo.png" />

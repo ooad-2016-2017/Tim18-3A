@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Border Background="Gainsboro"></Border>
         <Border Grid.Column="1" Background="White"></Border>
-        <Image Source="/Images/usericon.ico"></Image>
+        <Image Source="/Images/Icons/User.png"></Image>
         <TextBox Grid.Column="1" x:Name="usernameTextBox" FontSize="10" PlaceholderText ="Username" ></TextBox>
     </Grid>
 </UserControl>

@@ -26,7 +26,7 @@
 
             <Button Grid.Column="3" HorizontalAlignment="Right" Margin="5,5,10,5" MaxHeight="50" MaxWidth="50" Background="DeepSkyBlue">
                 <Viewbox>
-                    <Image Source="/Images/x.png" MaxHeight="40" MaxWidth="40"></Image>
+                    <Image Source="/Images/Icons/Error.png" MaxHeight="40" MaxWidth="40"></Image>
                 </Viewbox>
             </Button>
 
