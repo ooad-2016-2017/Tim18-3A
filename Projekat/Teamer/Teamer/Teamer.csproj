@@ -98,6 +98,13 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Dogadjaj.cs" />
+    <Compile Include="Models\Igrac.cs" />
+    <Compile Include="Models\Izvjestaj.cs" />
+    <Compile Include="Models\Korisnik.cs" />
+    <Compile Include="Models\Manager.cs" />
+    <Compile Include="Models\Tim.cs" />
+    <Compile Include="Models\Trener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User Controls\Datum.xaml.cs">
       <DependentUpon>Datum.xaml</DependentUpon>
@@ -287,8 +294,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
