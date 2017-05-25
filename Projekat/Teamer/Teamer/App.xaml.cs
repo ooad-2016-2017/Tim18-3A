@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.Data.Entity;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Teamer.Models;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -28,7 +30,11 @@ namespace Teamer
         /// </summary>
         public App()
         {
-            this.InitializeComponent();
+            using (var db = new TeamerDbContext())
+            {
+                db.Database.ApplyMigrations();
+            }
+                this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
 

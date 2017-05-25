@@ -8,15 +8,17 @@ using System.Threading.Tasks;
 
 namespace Teamer.Models
 {
-    public class Izvjestaj
+    class TipDogadjaja
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        int IzvjestajID { get; set; }
-        int Ocjena { get; set; }
+        int TipDogadjajaID { get; set; }
         [Required]
-        string Komentar { get; set; }
+        string Kategorija { get; set; }
+        [Required]
+        string Kod { get; set; }
+        [Required]
+        string Opis { get; set; }
         Dogadjaj Dogadjaj { get; set; }
         int DogadjajID { get; set; }
-        //Igrac Igrac { get; set; }
     }
 }
