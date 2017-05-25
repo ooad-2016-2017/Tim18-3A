@@ -72,6 +72,7 @@
                     <x:String>Amer Purić</x:String>
                 </ListView>
                 <local:OznaciSveKontrola HorizontalAlignment="Stretch" Margin="10,10,10,10"></local:OznaciSveKontrola>
+                <Button Click="Button_Click" HorizontalAlignment="Right" Margin="10,10,10,10" Background="DeepSkyBlue">Pošalji</Button>
             </StackPanel>
         </Grid>
     </ScrollViewer>

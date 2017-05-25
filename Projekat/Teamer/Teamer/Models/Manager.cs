@@ -8,6 +8,7 @@ namespace Teamer.Models
 {
     public class Manager
     {
+        int ManagerID { get; set; }
         List<Tim> Timovi { get; set; }
     }
 }

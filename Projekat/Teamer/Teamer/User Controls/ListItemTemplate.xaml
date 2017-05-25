@@ -16,15 +16,13 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Border Grid.RowSpan="2" Grid.ColumnSpan="3" Background="White"></Border>
 
         <Image Grid.RowSpan="2" Source="/Images/usericon.ico" MaxHeight="30" MaxWidth="30"></Image>
-        <TextBlock Grid.Column="1" Text="Name Surname" Foreground="Black" FontSize="13"></TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="e-mail" Foreground="Gray" FontSize="10"></TextBlock>
-        <CheckBox Grid.Column="2"  Grid.RowSpan="2" IsChecked="True"></CheckBox>
-
+        <TextBlock Grid.Column="1" Text="{x:Bind}" Foreground="Black" FontSize="13" HorizontalAlignment="Stretch"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="e-mail" Foreground="Gray" FontSize="10" HorizontalAlignment="Stretch"></TextBlock>
     </Grid>
 </UserControl>

@@ -8,6 +8,9 @@ namespace Teamer.Models
 {
     public class Trener
     {
+        int TrenerID { get; set; }
+
+        int TimID { get; set; }
         Tim Tim { get; set; }
     }
 }

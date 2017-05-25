@@ -8,6 +8,7 @@ namespace Teamer.Models
 {
     public class Korisnik
     {
+        int KorisnikID { get; set; }
         DateTime DatumRodjenja { get; set; }
         string Email { get; set; }
         string Ime { get; set; }

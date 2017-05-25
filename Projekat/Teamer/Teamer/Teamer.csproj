@@ -148,8 +148,14 @@
     <Compile Include="User Controls\username.xaml.cs">
       <DependentUpon>username.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MenadzerGalerija.xaml.cs">
+      <DependentUpon>MenadzerGalerija.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MenadzerIzborTima.xaml.cs">
       <DependentUpon>MenadzerIzborTima.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenadzerIzvjestaj.xaml.cs">
+      <DependentUpon>MenadzerIzvjestaj.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MenadzerNoviDogadjaj.xaml.cs">
       <DependentUpon>MenadzerNoviDogadjaj.xaml</DependentUpon>
@@ -268,7 +274,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\MenadzerGalerija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MenadzerIzborTima.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MenadzerIzvjestaj.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -295,9 +309,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

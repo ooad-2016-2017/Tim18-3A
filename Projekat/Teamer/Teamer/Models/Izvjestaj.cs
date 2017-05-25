@@ -8,6 +8,7 @@ namespace Teamer.Models
 {
     public class Izvjestaj
     {
+        int IzvjestajID { get; set; }
         int Ocjena { get; set; }
         string Komentar { get; set; }
         Dogadjaj Dogadjaj { get; set; }
