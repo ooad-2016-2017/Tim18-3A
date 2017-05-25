@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -31,6 +32,15 @@ namespace Teamer.View
         {
             Frame frame = Window.Current.Content as Frame;
             frame.Navigate(typeof(MenadzerNoviDogadjajPosaljiPoziv), null);
+        }
+
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var locator = new Geolocator();
+            locator.DesiredAccuracyInMeters = 50;
+            var position = await locator.GetGeopositionAsync();
+            await mapControl.TrySetViewAsync(position.Coordinate.Point, 15);
+
         }
     }
 }
