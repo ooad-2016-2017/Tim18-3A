@@ -103,6 +103,7 @@
       <DependentUpon>20170525213540_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\TeamerDbContextModelSnapshot.cs" />
+    <Compile Include="Models\DefaultPodaci.cs" />
     <Compile Include="Models\Dogadjaj.cs" />
     <Compile Include="Models\Igrac.cs" />
     <Compile Include="Models\Izvjestaj.cs" />

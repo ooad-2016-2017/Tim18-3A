@@ -33,6 +33,7 @@ namespace Teamer
             using (var db = new TeamerDbContext())
             {
                 db.Database.ApplyMigrations();
+                DefaultPodaci.Initialize(db);
             }
                 this.InitializeComponent();
             this.Suspending += OnSuspending;
