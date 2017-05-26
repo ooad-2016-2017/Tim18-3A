@@ -98,9 +98,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20170525213540_InitialMigration.cs" />
-    <Compile Include="Migrations\20170525213540_InitialMigration.designer.cs">
-      <DependentUpon>20170525213540_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20170526220701_InitialMigration.cs" />
+    <Compile Include="Migrations\20170526220701_InitialMigration.designer.cs">
+      <DependentUpon>20170526220701_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\TeamerDbContextModelSnapshot.cs" />
     <Compile Include="Models\DefaultPodaci.cs" />

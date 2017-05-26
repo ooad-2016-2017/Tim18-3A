@@ -18,7 +18,7 @@ namespace Teamer.Models
         string Kod { get; set; }
         [Required]
         string Opis { get; set; }
-        Dogadjaj Dogadjaj { get; set; }
-        int DogadjajID { get; set; }
+
+        ICollection<Dogadjaj> Dogadjaji { get; set; }
     }
 }

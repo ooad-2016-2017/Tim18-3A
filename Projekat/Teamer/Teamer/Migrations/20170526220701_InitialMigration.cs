@@ -21,29 +21,25 @@ namespace TeamerMigrations
                     Password = table.Column(type: "TEXT", nullable: true),
                     Prezime = table.Column(type: "TEXT", nullable: true),
                     Slika = table.Column(type: "BLOB", nullable: true),
-                    Username = table.Column(type: "TEXT", nullable: true)
+                    Username = table.Column(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Menadzer", x => x.MenadzerID);
                 });
             migration.CreateTable(
-                name: "Trener",
+                name: "TipDogadjaja",
                 columns: table => new
                 {
-                    TrenerID = table.Column(type: "INTEGER", nullable: false),
+                    TipDogadjajaID = table.Column(type: "INTEGER", nullable: false),
                         //.Annotation("Sqlite:Autoincrement", true),
-                    DatumRodjenja = table.Column(type: "TEXT", nullable: false),
-                    Email = table.Column(type: "TEXT", nullable: true),
-                    Ime = table.Column(type: "TEXT", nullable: true),
-                    Password = table.Column(type: "TEXT", nullable: true),
-                    Prezime = table.Column(type: "TEXT", nullable: true),
-                    Slika = table.Column(type: "BLOB", nullable: true),
-                    Username = table.Column(type: "TEXT", nullable: true)
+                    Kategorija = table.Column(type: "TEXT", nullable: true),
+                    Kod = table.Column(type: "TEXT", nullable: true),
+                    Opis = table.Column(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Trener", x => x.TrenerID);
+                    table.PrimaryKey("PK_TipDogadjaja", x => x.TipDogadjajaID);
                 });
             migration.CreateTable(
                 name: "Tim",
@@ -52,9 +48,9 @@ namespace TeamerMigrations
                     TimID = table.Column(type: "INTEGER", nullable: false),
                         //.Annotation("Sqlite:Autoincrement", true),
                     ManagerID = table.Column(type: "INTEGER", nullable: false),
-                    Naziv = table.Column(type: "TEXT", nullable: true),
+                    Naziv = table.Column(type: "TEXT", nullable: false),
                     Slika = table.Column(type: "BLOB", nullable: true),
-                    TrenerID = table.Column(type: "INTEGER", nullable: false)
+                    TrenerID = table.Column(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -64,11 +60,6 @@ namespace TeamerMigrations
                         columns: x => x.ManagerID,
                         referencedTable: "Menadzer",
                         referencedColumn: "MenadzerID");
-                    table.ForeignKey(
-                        name: "FK_Tim_Trener_TrenerID",
-                        columns: x => x.TrenerID,
-                        referencedTable: "Trener",
-                        referencedColumn: "TrenerID");
                 });
             migration.CreateTable(
                 name: "Dogadjaj",
@@ -91,6 +82,11 @@ namespace TeamerMigrations
                         columns: x => x.TimTimID,
                         referencedTable: "Tim",
                         referencedColumn: "TimID");
+                    table.ForeignKey(
+                        name: "FK_Dogadjaj_TipDogadjaja_TipDogadjajaID",
+                        columns: x => x.TipDogadjajaID,
+                        referencedTable: "TipDogadjaja",
+                        referencedColumn: "TipDogadjajaID");
                 });
             migration.CreateTable(
                 name: "Igrac",
@@ -104,15 +100,39 @@ namespace TeamerMigrations
                     Password = table.Column(type: "TEXT", nullable: true),
                     Prezime = table.Column(type: "TEXT", nullable: true),
                     Slika = table.Column(type: "BLOB", nullable: true),
-                    TimTimID = table.Column(type: "INTEGER", nullable: true),
-                    Username = table.Column(type: "TEXT", nullable: true)
+                    TimID = table.Column(type: "INTEGER", nullable: true),
+                    Username = table.Column(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Igrac", x => x.IgracID);
                     table.ForeignKey(
-                        name: "FK_Igrac_Tim_TimTimID",
-                        columns: x => x.TimTimID,
+                        name: "FK_Igrac_Tim_TimID",
+                        columns: x => x.TimID,
+                        referencedTable: "Tim",
+                        referencedColumn: "TimID");
+                });
+            migration.CreateTable(
+                name: "Trener",
+                columns: table => new
+                {
+                    TrenerID = table.Column(type: "INTEGER", nullable: false),
+                        //.Annotation("Sqlite:Autoincrement", true),
+                    DatumRodjenja = table.Column(type: "TEXT", nullable: false),
+                    Email = table.Column(type: "TEXT", nullable: true),
+                    Ime = table.Column(type: "TEXT", nullable: true),
+                    Password = table.Column(type: "TEXT", nullable: true),
+                    Prezime = table.Column(type: "TEXT", nullable: true),
+                    Slika = table.Column(type: "BLOB", nullable: true),
+                    TimID = table.Column(type: "INTEGER", nullable: true),
+                    Username = table.Column(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Trener", x => x.TrenerID);
+                    table.ForeignKey(
+                        name: "FK_Trener_Tim_TimID",
+                        columns: x => x.TimID,
                         referencedTable: "Tim",
                         referencedColumn: "TimID");
                 });
@@ -135,37 +155,17 @@ namespace TeamerMigrations
                         referencedTable: "Dogadjaj",
                         referencedColumn: "DogadjajID");
                 });
-            migration.CreateTable(
-                name: "TipDogadjaja",
-                columns: table => new
-                {
-                    TipDogadjajaID = table.Column(type: "INTEGER", nullable: false),
-                        //.Annotation("Sqlite:Autoincrement", true),
-                    DogadjajID = table.Column(type: "INTEGER", nullable: false),
-                    Kategorija = table.Column(type: "TEXT", nullable: true),
-                    Kod = table.Column(type: "TEXT", nullable: true),
-                    Opis = table.Column(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TipDogadjaja", x => x.TipDogadjajaID);
-                    table.ForeignKey(
-                        name: "FK_TipDogadjaja_Dogadjaj_DogadjajID",
-                        columns: x => x.DogadjajID,
-                        referencedTable: "Dogadjaj",
-                        referencedColumn: "DogadjajID");
-                });
         }
 
         public override void Down(MigrationBuilder migration)
         {
             migration.DropTable("Igrac");
             migration.DropTable("Izvjestaj");
-            migration.DropTable("TipDogadjaja");
+            migration.DropTable("Trener");
             migration.DropTable("Dogadjaj");
             migration.DropTable("Tim");
+            migration.DropTable("TipDogadjaja");
             migration.DropTable("Menadzer");
-            migration.DropTable("Trener");
         }
     }
 }

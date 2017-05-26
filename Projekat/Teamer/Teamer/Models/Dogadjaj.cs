@@ -11,8 +11,10 @@ namespace Teamer.Models
     { 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         int DogadjajID { get; set; }
-        TipDogadjaja TipDogadjaja { get; set; }
+
         int TipDogadjajaID { get; set; }
+        TipDogadjaja TipDogadjaja { get; set; }
+
         float GeoDuzina { get; set; }
         float GeoSirina { get; set; }
         DateTime DatumDogadjaja { get; set; }

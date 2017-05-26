@@ -43,7 +43,8 @@ namespace Teamer.Models
                 context.Timovi.AddRange(
                     new Tim()
                     {
-                        Naziv = "3A"
+                        Naziv = "3A",
+                        Manager = context.Menadzeri.Where(x => x.Username == "Picko").FirstOrDefault()
                     });
                 context.SaveChanges();
             }
@@ -54,7 +55,8 @@ namespace Teamer.Models
                     {
                         Ime = "Armin",
                         Prezime = "Omerbegovic",
-            
+                        Username = "Adza",
+                        DatumRodjenja = DateTime.Now
                     });
                 context.SaveChanges();
             }

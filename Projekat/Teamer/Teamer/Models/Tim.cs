@@ -16,7 +16,7 @@ namespace Teamer.Models
         public string Naziv { get; set; }
         public byte[] Slika { get; set; }
 
-        public int TrenerID { get; set; }
+        public int? TrenerID { get; set; }
         public Trener Trener { get; set; }
 
         public ICollection<Igrac> Igraci { get; set; }

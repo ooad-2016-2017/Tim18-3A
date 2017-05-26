@@ -51,9 +51,10 @@ namespace TeamerMigrations
 
                     b.Property<byte[]>("Slika");
 
-                    b.Property<int?>("TimTimID");
+                    b.Property<int?>("TimID");
 
-                    b.Property<string>("Username");
+                    b.Property<string>("Username")
+                        .Required();
 
                     b.Key("IgracID");
                 });
@@ -89,7 +90,8 @@ namespace TeamerMigrations
 
                     b.Property<byte[]>("Slika");
 
-                    b.Property<string>("Username");
+                    b.Property<string>("Username")
+                        .Required();
 
                     b.Key("MenadzerID");
                 });
@@ -101,11 +103,12 @@ namespace TeamerMigrations
 
                     b.Property<int>("ManagerID");
 
-                    b.Property<string>("Naziv");
+                    b.Property<string>("Naziv")
+                        .Required();
 
                     b.Property<byte[]>("Slika");
 
-                    b.Property<int>("TrenerID");
+                    b.Property<int?>("TrenerID");
 
                     b.Key("TimID");
                 });
@@ -114,8 +117,6 @@ namespace TeamerMigrations
                 {
                     b.Property<int>("TipDogadjajaID")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int>("DogadjajID");
 
                     b.Property<string>("Kategorija");
 
@@ -143,7 +144,10 @@ namespace TeamerMigrations
 
                     b.Property<byte[]>("Slika");
 
-                    b.Property<string>("Username");
+                    b.Property<int?>("TimID");
+
+                    b.Property<string>("Username")
+                        .Required();
 
                     b.Key("TrenerID");
                 });
@@ -153,13 +157,17 @@ namespace TeamerMigrations
                     b.Reference("Teamer.Models.Tim")
                         .InverseCollection()
                         .ForeignKey("TimTimID");
+
+                    b.Reference("Teamer.Models.TipDogadjaja")
+                        .InverseCollection()
+                        .ForeignKey("TipDogadjajaID");
                 });
 
             builder.Entity("Teamer.Models.Igrac", b =>
                 {
                     b.Reference("Teamer.Models.Tim")
                         .InverseCollection()
-                        .ForeignKey("TimTimID");
+                        .ForeignKey("TimID");
                 });
 
             builder.Entity("Teamer.Models.Izvjestaj", b =>
@@ -174,17 +182,13 @@ namespace TeamerMigrations
                     b.Reference("Teamer.Models.Menadzer")
                         .InverseCollection()
                         .ForeignKey("ManagerID");
-
-                    b.Reference("Teamer.Models.Trener")
-                        .InverseReference()
-                        .ForeignKey("Teamer.Models.Tim", "TrenerID");
                 });
 
-            builder.Entity("Teamer.Models.TipDogadjaja", b =>
+            builder.Entity("Teamer.Models.Trener", b =>
                 {
-                    b.Reference("Teamer.Models.Dogadjaj")
+                    b.Reference("Teamer.Models.Tim")
                         .InverseReference()
-                        .ForeignKey("Teamer.Models.TipDogadjaja", "DogadjajID");
+                        .ForeignKey("Teamer.Models.Trener", "TimID");
                 });
         }
     }
