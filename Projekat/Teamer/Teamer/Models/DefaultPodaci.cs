@@ -24,6 +24,40 @@ namespace Teamer.Models
                     });
                 context.SaveChanges();
             }
+            if (!context.Menadzeri.Any())
+            {
+                context.Menadzeri.AddRange(
+                    new Menadzer()
+                    {
+                        Ime = "Amer",
+                        Prezime = "Puric",
+                        Username = "Picko",
+                        Password = "12345",
+                        Email = "amer.puric@gmail.com"
+
+                    });
+                context.SaveChanges();
+            }
+            if (!context.Timovi.Any())
+            {
+                context.Timovi.AddRange(
+                    new Tim()
+                    {
+                        Naziv = "3A"
+                    });
+                context.SaveChanges();
+            }
+            if (!context.Igraci.Any())
+            {
+                context.Igraci.AddRange(
+                    new Igrac()
+                    {
+                        Ime = "Armin",
+                        Prezime = "Omerbegovic",
+            
+                    });
+                context.SaveChanges();
+            }
         }
     }
 }

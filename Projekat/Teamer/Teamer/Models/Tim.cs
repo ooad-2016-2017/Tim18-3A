@@ -11,21 +11,21 @@ namespace Teamer.Models
     public class Tim
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        int TimID { get; set; }
+        public int TimID { get; set; }
         [Required]
-        string Naziv { get; set; }
-        byte[] Slika { get; set; }
+        public string Naziv { get; set; }
+        public byte[] Slika { get; set; }
 
-        int TrenerID { get; set; }
-        Trener Trener { get; set; }
+        public int TrenerID { get; set; }
+        public Trener Trener { get; set; }
 
-        ICollection<Igrac> Igraci { get; set; }
+        public ICollection<Igrac> Igraci { get; set; }
 
-        int ManagerID { get; set; }
-        Menadzer Manager { get; set; }
+        public int ManagerID { get; set; }
+        public Menadzer Manager { get; set; }
 
-        ICollection<Dogadjaj> Dogadjaji { get; set; }
-        ICollection<byte[]> Galerija { get; set; }
+        public ICollection<Dogadjaj> Dogadjaji { get; set; }
+        public ICollection<byte[]> Galerija { get; set; }
          
     }
 }
