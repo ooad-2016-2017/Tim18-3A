@@ -6,8 +6,10 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
@@ -39,7 +41,13 @@ namespace Teamer.View
             var locator = new Geolocator();
             locator.DesiredAccuracyInMeters = 50;
             var position = await locator.GetGeopositionAsync();
-            await mapControl.TrySetViewAsync(position.Coordinate.Point, 15);
+            await mapControl.TrySetViewAsync(position.Coordinate.Point, 16);
+            MapIcon pin = new MapIcon();
+            pin.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Images/Icons/PlaceholderPin.png"));
+            pin.Title = "Trenutna lokacija";
+            pin.Location = new Geopoint(new BasicGeoposition() { Latitude = position.Coordinate.Point.Position.Latitude, Longitude = position.Coordinate.Point.Position.Longitude });
+            pin.NormalizedAnchorPoint = new Point(0.5, 0.5);
+            mapControl.MapElements.Add(pin);
 
         }
     }

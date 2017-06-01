@@ -195,6 +195,7 @@
     <Content Include="Images\Icons\Event.png" />
     <Content Include="Images\Icons\Mail.png" />
     <Content Include="Images\Icons\Password.png" />
+    <Content Include="Images\Icons\PlaceholderPin.png" />
     <Content Include="Images\Icons\Placeholder.png" />
     <Content Include="Images\Icons\Profile.png" />
     <Content Include="Images\Icons\User.png" />
