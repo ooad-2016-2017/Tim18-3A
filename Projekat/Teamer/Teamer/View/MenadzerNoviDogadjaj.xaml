@@ -38,7 +38,7 @@
             <local:TipDogadjaja Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="60,80,5,10" MaxHeight="30"></local:TipDogadjaja>
             <local:Datum Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5,80,60,10" MaxHeight="30"></local:Datum>
             <StackPanel Grid.Row="2" Grid.ColumnSpan="4" Orientation="Vertical" HorizontalAlignment="Stretch" Margin="50,10,50,10">
-                <local:Lokacija HorizontalAlignment="Stretch" MaxHeight="25" Margin="10,10,10,10"></local:Lokacija>
+                <local:Lokacija x:Name="LokacijaUC" HorizontalAlignment="Stretch" MaxHeight="25" Margin="10,10,10,10" LostFocus="LokacijaUC_LostFocus"></local:Lokacija>
                 <Maps:MapControl HorizontalAlignment="Stretch" x:Name="mapControl" MapServiceToken="kFU6E9hjghVUkQ44OIaD~Dyq4-Feg5wZeMXfqfA5EFg~Ah4C-DRUGiVyy5eOo1-0dPnt9etP6dkooXG2k4WeIytiCs2VLZphsF8HSHuTSD1L" ZoomLevel="8" MinHeight="200" Margin="10,10,10,10"></Maps:MapControl>
                 <local:MyRichTextBox HorizontalAlignment="Stretch" MinHeight="100" MaxHeight="250" Margin="10,10,10,10"></local:MyRichTextBox>
             </StackPanel>

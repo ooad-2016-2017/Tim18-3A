@@ -34,36 +34,37 @@ namespace Teamer.View
         }
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            bool korektno = true;
+            //bool korektno = true;
 
-            if (emailUC.Vrijednost == "" || userNameUC.Vrijednost == "" || passwordUC.Vrijednost == "" || cPasswordUC.Vrijednost == "")
-            {
-                korektno = false;
+            //if (emailUC.Vrijednost == "" || userNameUC.Vrijednost == "" || passwordUC.Vrijednost == "" || cPasswordUC.Vrijednost == "")
+            //{
+            //    korektno = false;
 
-                var dialog = new MessageDialog("Nisu uneseni svi podaci!", "GREŠKA");
-                await dialog.ShowAsync();
-            }
-            else if (!(IsValidEmail(emailUC.Vrijednost)))
-            {
-                korektno = false;
+            //    var dialog = new MessageDialog("Nisu uneseni svi podaci!", "GREŠKA");
+            //    await dialog.ShowAsync();
+            //}
+            //else if (!(IsValidEmail(emailUC.Vrijednost)))
+            //{
+            //    korektno = false;
 
-                var dialog = new MessageDialog("Pogrešna forma email-a!", "GREŠKA");
-                await dialog.ShowAsync();
-            }
-            else if (passwordUC.Vrijednost != cPasswordUC.Vrijednost)
-            {
-                korektno = false;
+            //    var dialog = new MessageDialog("Pogrešna forma email-a!", "GREŠKA");
+            //    await dialog.ShowAsync();
+            //}
+            //else if (passwordUC.Vrijednost != cPasswordUC.Vrijednost)
+            //{
+            //    korektno = false;
 
-                var dialog = new MessageDialog("Šifre nisu identične!", "GREŠKA");
-                await dialog.ShowAsync();
-            }
+            //    var dialog = new MessageDialog("Šifre nisu identične!", "GREŠKA");
+            //    await dialog.ShowAsync();
+            //}
 
-            if(korektno)
-            {
-                Frame frame = Window.Current.Content as Frame;
-                frame.Navigate(typeof(MenadzerIzborTima), null);
-            }
-            
+            //if(korektno)
+            //{
+            //    Frame frame = Window.Current.Content as Frame;
+            //    frame.Navigate(typeof(MenadzerIzborTima), null);
+            //}
+            Frame frame = Window.Current.Content as Frame;
+            frame.Navigate(typeof(MenadzerIzborTima), null);
         }
     }
 }
