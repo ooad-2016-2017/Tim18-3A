@@ -21,6 +21,6 @@
         <Border Background="Gainsboro"></Border>
         <Border Grid.Column="1" Grid.RowSpan="2" Background="White"></Border>
         <Image Source="/Images/Icons/Description.png" MaxHeight="50"></Image>
-        <RichEditBox Grid.RowSpan="2" Grid.Column="1" FontSize="10" PlaceholderText="Kratki opis"></RichEditBox>
+        <RichEditBox x:Name="RichEditBox" Grid.RowSpan="2" Grid.Column="1" FontSize="10" PlaceholderText="Kratki opis"></RichEditBox>
     </Grid>
 </UserControl>

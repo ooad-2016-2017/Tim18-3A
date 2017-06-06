@@ -23,5 +23,10 @@ namespace Teamer.User_Controls
         {
             this.InitializeComponent();
         }
+        public DateTime Vrijednost
+        {
+            get { return Convert.ToDateTime(CalendarDatePicker.Date); }
+            set { CalendarDatePicker.Date = value; }
+        }
     }
 }
