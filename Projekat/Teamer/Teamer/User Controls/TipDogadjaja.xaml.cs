@@ -23,5 +23,9 @@ namespace Teamer.User_Controls
         {
             this.InitializeComponent();
         }
+        public string Vrijednost
+        {
+            get { return ComboBox.SelectedValue.ToString(); }
+        }
     }
 }

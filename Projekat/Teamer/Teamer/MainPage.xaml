@@ -21,8 +21,8 @@
         <Border Grid.Row="1" Grid.ColumnSpan="3" Background="Gainsboro"></Border>
         <Image Source="/Images/Logo.png" Grid.ColumnSpan="3"></Image>
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="40,0,40,0" VerticalAlignment="Center" Orientation="Vertical">
-            <local:username Margin="20,20,20,0" Height="25"></local:username>
-            <local:password Margin="20,20,20,0" Height="25"></local:password>
+            <local:username x:Name="UserNameUC" Margin="20,20,20,0" Height="25"></local:username>
+            <local:password x:Name="PasswordUC" Margin="20,20,20,0" Height="25"></local:password>
             <StackPanel></StackPanel>
             <local:Registration_Login Margin="20,20,20,0"></local:Registration_Login>
         </StackPanel>

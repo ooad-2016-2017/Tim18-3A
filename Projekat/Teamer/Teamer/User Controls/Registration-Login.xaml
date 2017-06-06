@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Border Background="Gainsboro"></Border>
         <Border Grid.Column="1" Background="Gainsboro"></Border>
-        <HyperlinkButton HorizontalAlignment="Left" FontSize="10"> Registracija </HyperlinkButton>
-        <Button Click="Button_Click"  Grid.Column="1" HorizontalAlignment="Right" Background="CornflowerBlue" FontSize="10">Prijava</Button>
+        <HyperlinkButton HorizontalAlignment="Left" FontSize="10" Click="HyperlinkButton_Click"> Registracija </HyperlinkButton>
+        <Button x:Name="Button"  Grid.Column="1" HorizontalAlignment="Right" Background="CornflowerBlue" FontSize="10">Prijava</Button>
     </Grid>
 </UserControl>

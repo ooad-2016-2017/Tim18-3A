@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Teamer.View;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -31,6 +32,12 @@ namespace Teamer.User_Controls
         {
             var page = new MainPage();
             page.Open();
+        }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame frame = Window.Current.Content as Frame;
+            frame.Navigate(typeof(Registration), null);
         }
     }
 }
