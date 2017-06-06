@@ -30,6 +30,12 @@ namespace Teamer
             this.InitializeComponent();
         }
 
+        
+
+        protected void ButtonsControl_ButtonClick(object sender, EventArgs e)
+        {
+            //handle the event 
+        }
         public void Open()
         {
             Frame frame = Window.Current.Content as Frame;

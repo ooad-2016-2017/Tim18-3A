@@ -20,17 +20,11 @@ namespace Teamer.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MenadzerIzvjestaj : Page
+    public sealed partial class TrenerGalerija : Page
     {
-        public MenadzerIzvjestaj()
+        public TrenerGalerija()
         {
             this.InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var frame = (Frame)Window.Current.Content;
-            frame.Navigate(typeof(MenadzerGalerija), null);
         }
     }
 }
