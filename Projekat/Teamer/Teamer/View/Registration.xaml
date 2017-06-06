@@ -22,10 +22,10 @@
             <Border Grid.Row="2" Grid.ColumnSpan="2" Background="Gainsboro"></Border>
             <Image Source="/Images/Logo.png" Grid.ColumnSpan="2" MaxHeight="100"></Image>
             <StackPanel Grid.Row="1" Orientation="Vertical">
-                <local:email Margin="20,10,20,0" Height="25"></local:email>
-                <local:username Margin="20,10,20,0" Height="25"></local:username>
-                <local:password Margin="20,10,20,0" Height="25"></local:password>
-                <local:password Margin="20,10,20,0" Height="25"></local:password>
+                <local:email x:Name="emailUC" Margin="20,10,20,0" Height="25"></local:email>
+                <local:username x:Name="userNameUC" Margin="20,10,20,0" Height="25"></local:username>
+                <local:password x:Name="passwordUC" Margin="20,10,20,0" Height="25"></local:password>
+                <local:password x:Name="cPasswordUC" Margin="20,10,20,0" Height="25"></local:password>
                 <CalendarDatePicker Margin="20,10,20,0" Header="Birth date" HorizontalAlignment="Stretch" FontSize="10"></CalendarDatePicker>
                 <local:Radio_buttoni HorizontalAlignment="Left" Margin="20,10,20,0"></local:Radio_buttoni>
                 <ComboBox Margin="20,10,20,0" HorizontalAlignment="Stretch">
