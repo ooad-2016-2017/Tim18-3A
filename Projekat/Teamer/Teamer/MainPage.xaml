@@ -24,7 +24,7 @@
             <local:username Margin="20,20,20,0" Height="25"></local:username>
             <local:password Margin="20,20,20,0" Height="25"></local:password>
             <StackPanel></StackPanel>
-            <local:Registration_Login Margin="20,20,20,0"></local:Registration_Login>
+            <local:Registration_Login x:Name="ButtonsControl" Margin="20,20,20,0"></local:Registration_Login>
         </StackPanel>
 
     </Grid>

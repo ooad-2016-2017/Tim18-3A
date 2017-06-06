@@ -1,0 +1,98 @@
+﻿<Page
+    x:Class="Teamer.View.TrenerTimIgraci"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Teamer.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="9*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.ColumnSpan="7" Background="CornflowerBlue"></Border>
+            <Border Grid.Row="1" Grid.ColumnSpan="7" Background="DeepSkyBlue"></Border>
+            <Border Grid.Row="2" Grid.ColumnSpan="7" Background="Gainsboro"></Border>
+
+
+            <StackPanel Grid.Column="5" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,0,20,0" HorizontalAlignment="Right">
+                <Button Background="CornflowerBlue" MaxHeight="50" MaxWidth="50" HorizontalAlignment="Right">
+                    <Viewbox>
+                        <Image Source="/Images/Icons/Inbox.png"></Image>
+                    </Viewbox>
+                </Button>
+                <Button Background="CornflowerBlue" MaxHeight="50" MaxWidth="50" HorizontalAlignment="Right">
+                    <Viewbox>
+                        <Image Source="/Images/Icons/Profile.png"></Image>
+                    </Viewbox>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.ColumnSpan="5" Orientation="Horizontal" Margin="20,0,0,0">
+                <Button Margin="10,0,10,0" FontSize="15" Foreground="White">TEAMER</Button>
+                <Button Margin="10,0,10,0" FontSize="15" Foreground="White">IZVJESTAJ</Button>
+                <Button Margin="10,0,10,0" FontSize="15" Foreground="White">GALERIJA</Button>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="7" Orientation="Horizontal" Margin="20,0,0,0">
+                <Button Margin="10,0,10,0" FontSize="13" Foreground="White">IGRACI</Button>
+                <Button Click="Button_Click" Margin="10,0,10,0" FontSize="13" Foreground="White">RASPORED</Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Orientation="Vertical" Margin="20,0,10,0"> 
+                <ListView Margin="0,10,0,0">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Border Background="CornflowerBlue" >
+                                    <TextBlock Text="Igraci" Margin="5,5,5,0"  Foreground="White" FontSize="17"></TextBlock>
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListBoxItem>Amel Sazic</ListBoxItem>
+                    <ListBoxItem>Amer Puric</ListBoxItem>
+                    <ListBoxItem>Mujo Mujic</ListBoxItem>
+                </ListView>
+                <Button Margin="0,10,0,0" Background="DeepSkyBlue" Foreground="White" HorizontalAlignment="Center">Azuriraj igrace</Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4" Margin="10,0,20,0">
+                <ListView Margin="0,10,0,0">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.ColumnSpan="5" Background="CornflowerBlue"></Border>
+                                <Image MaxHeight="30" MaxWidth="30" Margin="5,5,5,5" Source="/Images/email.png"></Image>
+                                <TextBlock Grid.Column="1" Text="Događaji" Foreground="White" FontSize="17" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListViewItem Background="DeepSkyBlue">Sastanak</ListViewItem>
+                    <ListViewItem Background="DeepSkyBlue">Sastanak</ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

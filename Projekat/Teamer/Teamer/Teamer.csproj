@@ -98,6 +98,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\KorisnikMapper.cs" />
     <Compile Include="Migrations\20170526220701_InitialMigration.cs" />
     <Compile Include="Migrations\20170526220701_InitialMigration.designer.cs">
       <DependentUpon>20170526220701_InitialMigration.cs</DependentUpon>
@@ -118,6 +119,9 @@
     </Compile>
     <Compile Include="User Controls\DodajSliku.xaml.cs">
       <DependentUpon>DodajSliku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\DogadjajKontrola.xaml.cs">
+      <DependentUpon>DogadjajKontrola.xaml</DependentUpon>
     </Compile>
     <Compile Include="User Controls\email.xaml.cs">
       <DependentUpon>email.xaml</DependentUpon>
@@ -155,6 +159,17 @@
     <Compile Include="User Controls\username.xaml.cs">
       <DependentUpon>username.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\IgracVM.cs" />
+    <Compile Include="ViewModel\KorisnikVM.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MenadzerVM.cs" />
+    <Compile Include="ViewModel\TrenerVM.cs" />
+    <Compile Include="View\IgracIzvjestaj.xaml.cs">
+      <DependentUpon>IgracIzvjestaj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\IgracTimRaspored.xaml.cs">
+      <DependentUpon>IgracTimRaspored.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MenadzerGalerija.xaml.cs">
       <DependentUpon>MenadzerGalerija.xaml</DependentUpon>
     </Compile>
@@ -178,6 +193,21 @@
     </Compile>
     <Compile Include="View\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrenerGalerija.xaml.cs">
+      <DependentUpon>TrenerGalerija.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrenerIzvjestajPregled.xaml.cs">
+      <DependentUpon>TrenerIzvjestajPregled.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrenerNoviIzvjestaj.xaml.cs">
+      <DependentUpon>TrenerNoviIzvjestaj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrenerTimIgraci.xaml.cs">
+      <DependentUpon>TrenerTimIgraci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrenerTimRaspored.xaml.cs">
+      <DependentUpon>TrenerTimRaspored.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -233,6 +263,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="User Controls\DogadjajKontrola.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="User Controls\email.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -281,6 +315,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\IgracIzvjestaj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\IgracTimRaspored.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MenadzerGalerija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -313,10 +355,28 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\TrenerGalerija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrenerIzvjestajPregled.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrenerNoviIzvjestaj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrenerTimIgraci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrenerTimRaspored.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
