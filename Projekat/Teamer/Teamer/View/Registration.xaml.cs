@@ -58,12 +58,13 @@ namespace Teamer.View
             //    await dialog.ShowAsync();
             //}
 
-            if(korektno)
-            {
-                Frame frame = Window.Current.Content as Frame;
-                frame.Navigate(typeof(MenadzerIzborTima), null);
-            }
-            
+            //if(korektno)
+            //{
+            //    Frame frame = Window.Current.Content as Frame;
+            //    frame.Navigate(typeof(MenadzerIzborTima), null);
+            //}
+            Frame frame = Window.Current.Content as Frame;
+            frame.Navigate(typeof(MenadzerIzborTima), null);
         }
     }
 }
