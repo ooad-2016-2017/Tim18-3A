@@ -219,6 +219,7 @@
   <ItemGroup>
     <Content Include="Images\email.png" />
     <Content Include="Images\Icons\Calendar.png" />
+    <Content Include="Images\Icons\camera.png" />
     <Content Include="Images\Icons\Description.png" />
     <Content Include="Images\Icons\Error.png" />
     <Content Include="Images\Icons\Inbox.png" />

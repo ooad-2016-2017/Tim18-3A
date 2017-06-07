@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Teamer.View;
+using Teamer.ViewModel;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -25,21 +26,39 @@ namespace Teamer
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private LoginViewModel viewModel; 
         public MainPage()
         {
             this.InitializeComponent();
+            viewModel = new LoginViewModel();
+            this.DataContext = viewModel;
+            this.ButtonsControl.Register += new EventHandler(OpenRegistration);
+            this.ButtonsControl.Login += new EventHandler(Login);
         }
 
-        
-
-        protected void ButtonsControl_ButtonClick(object sender, EventArgs e)
+        public void Login(object sender, EventArgs e)
         {
-            //handle the event 
+            KorisnikVM korisnik;
+            if((korisnik = viewModel.PretraziKorisnike()) != null)
+            {
+                var frame = (Frame)Window.Current.Content;
+                switch (viewModel.tip)
+                {
+                    case 0: frame.Navigate(typeof(MenadzerIzborTima), korisnik);
+                        break;
+                    case 1: frame.Navigate(typeof(TrenerTimRaspored), korisnik);
+                        break;
+                    case 2:
+                        frame.Navigate(typeof(IgracTimRaspored), korisnik);
+                        break;
+                }
+            }
         }
-        public void Open()
+        public void OpenRegistration(object sender, EventArgs e)
         {
             Frame frame = Window.Current.Content as Frame;
             frame.Navigate(typeof(Registration), null);
         }
+
     }
 }

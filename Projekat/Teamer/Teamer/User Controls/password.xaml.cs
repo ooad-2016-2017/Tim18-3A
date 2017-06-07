@@ -23,10 +23,5 @@ namespace Teamer.User_Controls
         {
             this.InitializeComponent();
         }
-        public string Vrijednost
-        {
-            get { return TextBox.Password; }
-            set { TextBox.Password = value; }
-        }
     }
 }

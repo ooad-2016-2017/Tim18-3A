@@ -23,6 +23,8 @@ namespace Teamer.User_Controls
 {
     public sealed partial class Registration_Login : UserControl
     {
+        public EventHandler Register;
+        public EventHandler Login;
         public Registration_Login()
         {
             this.InitializeComponent();
@@ -30,14 +32,18 @@ namespace Teamer.User_Controls
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            var page = new MainPage();
-            page.Open();
+            if(this.Login != null)
+            {
+                this.Login(this, new EventArgs());
+            }
         }
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame frame = Window.Current.Content as Frame;
-            frame.Navigate(typeof(Registration), null);
+            if(this.Register != null)
+            {
+                this.Register(this, new EventArgs());
+            }
         }
     }
 }

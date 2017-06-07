@@ -12,32 +12,39 @@ namespace Teamer.ViewModel
     class LoginViewModel
     {
         TeamerDbContext context;
+        public string Username { get; set; }
+        public string Password { get; set; }
+
+        public int tip;
 
         public LoginViewModel()
         {
             context = new TeamerDbContext();
         }
 
-        public KorisnikVM PretraziKorisnike(string username)
+        public KorisnikVM PretraziKorisnike()
         {
             KorisnikVM korisnik = null;
-            MenadzerVM item;
-            TrenerVM item2;
-            IgracVM item3;
-            if ((item = PretraziMenadzere(username)) != null)
+            MenadzerVM item = new MenadzerVM();
+            TrenerVM item2 = new TrenerVM();
+            IgracVM item3 = new IgracVM();
+            if ((item = PretraziMenadzere(Username)) != null)
             {
                 korisnik = new MenadzerVM();
                 korisnik = item;
+                tip = 0;
             }
-            if ((item2 = PretraziTrenere(username)) != null && korisnik == null)
+            if ((item2 = PretraziTrenere(Username)) != null && korisnik == null)
             {
                 korisnik = new TrenerVM();
                 korisnik = item2;
+                tip = 1;
             }
-            if ((item3 = PretraziIgrace(username)) != null && korisnik == null)
+            if ((item3 = PretraziIgrace(Username)) != null && korisnik == null)
             {
                 korisnik = new IgracVM();
                 korisnik = item2;
+                tip = 2;
             }
 
             return korisnik;

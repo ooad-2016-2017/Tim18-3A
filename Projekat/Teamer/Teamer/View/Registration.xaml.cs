@@ -36,27 +36,27 @@ namespace Teamer.View
         {
             bool korektno = true;
 
-            if (emailUC.Vrijednost == "" || userNameUC.Vrijednost == "" || passwordUC.Vrijednost == "" || cPasswordUC.Vrijednost == "")
-            {
-                korektno = false;
+            //if (emailUC.Vrijednost == "" || userNameUC.Username == "" || passwordUC.Vrijednost == "" || cPasswordUC.Vrijednost == "")
+            //{
+            //    korektno = false;
 
-                var dialog = new MessageDialog("Nisu uneseni svi podaci!", "GREŠKA");
-                await dialog.ShowAsync();
-            }
-            else if (!(IsValidEmail(emailUC.Vrijednost)))
-            {
-                korektno = false;
+            //    var dialog = new MessageDialog("Nisu uneseni svi podaci!", "GREŠKA");
+            //    await dialog.ShowAsync();
+            //}
+            //else if (!(IsValidEmail(emailUC.Vrijednost)))
+            //{
+            //    korektno = false;
 
-                var dialog = new MessageDialog("Pogrešna forma email-a!", "GREŠKA");
-                await dialog.ShowAsync();
-            }
-            else if (passwordUC.Vrijednost != cPasswordUC.Vrijednost)
-            {
-                korektno = false;
+            //    var dialog = new MessageDialog("Pogrešna forma email-a!", "GREŠKA");
+            //    await dialog.ShowAsync();
+            //}
+            //else if (passwordUC.Vrijednost != cPasswordUC.Vrijednost)
+            //{
+            //    korektno = false;
 
-                var dialog = new MessageDialog("Šifre nisu identične!", "GREŠKA");
-                await dialog.ShowAsync();
-            }
+            //    var dialog = new MessageDialog("Šifre nisu identične!", "GREŠKA");
+            //    await dialog.ShowAsync();
+            //}
 
             if(korektno)
             {
