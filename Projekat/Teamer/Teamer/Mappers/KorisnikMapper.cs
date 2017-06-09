@@ -54,6 +54,5 @@ namespace Teamer.Mappers
 
             return korisnikVM;
         }
-
     }
 }

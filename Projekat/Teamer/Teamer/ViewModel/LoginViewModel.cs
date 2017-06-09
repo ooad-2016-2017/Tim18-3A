@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Data.Entity;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +11,31 @@ using Windows.UI.Xaml;
 
 namespace Teamer.ViewModel
 {
-    class LoginViewModel
+    class LoginViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         TeamerDbContext context;
-        public string Username { get; set; }
-        public string Password { get; set; }
+        private string username;
+        private string password;
+        public string Username
+        {
+            get { return username; }
+            set
+            {
+                username = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Username)));
+            }
+        }
+
+        public string Password
+        {
+            get { return password; }
+            set
+            {
+                password = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Password)));
+            }
+        }
 
         public int tip;
 
@@ -52,7 +74,7 @@ namespace Teamer.ViewModel
 
         private MenadzerVM PretraziMenadzere(string username)
         {
-            var menadzer = context.Menadzeri.Where(x => x.Username == username).FirstOrDefault();
+            var menadzer = context.Menadzeri.Include(x => x.Timovi).Where(x => x.Username == username).FirstOrDefault();
 
             MenadzerVM menadzerVM = null;
             if(menadzer != null)

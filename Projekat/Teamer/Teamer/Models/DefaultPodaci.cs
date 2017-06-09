@@ -34,7 +34,7 @@ namespace Teamer.Models
                         Username = "Picko",
                         Password = "12345",
                         Email = "amer.puric@gmail.com"
-
+                        
                     });
                 context.SaveChanges();
             }

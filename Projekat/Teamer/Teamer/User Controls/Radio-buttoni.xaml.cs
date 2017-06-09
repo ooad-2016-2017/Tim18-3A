@@ -19,9 +19,34 @@ namespace Teamer.User_Controls
 {
     public sealed partial class Radio_buttoni : UserControl
     {
+        public EventHandler Menadzer;
+        public EventHandler Trener;
+        public EventHandler Igrac;
         public Radio_buttoni()
         {
             this.InitializeComponent();
+        }
+
+        private void RadioButtonMenadzer_Checked(object sender, RoutedEventArgs e)
+        {
+            if (this.Menadzer != null)
+            {
+                this.Menadzer(this, new EventArgs());
+            }
+        }
+        private void RadioButtonTrener_Checked(object sender, RoutedEventArgs e)
+        {
+            if (this.Trener != null)
+            {
+                this.Trener(this, new EventArgs());
+            }
+        }
+        private void RadioButtonIgrac_Checked(object sender, RoutedEventArgs e)
+        {
+            if (this.Igrac != null)
+            {
+                this.Igrac(this, new EventArgs());
+            }
         }
     }
 }

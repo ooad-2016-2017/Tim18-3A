@@ -13,9 +13,9 @@
         <Border Background="Gainsboro"></Border>
 
         <StackPanel Orientation="Vertical">
-            <RadioButton>Menadžer</RadioButton>
-            <RadioButton>Trener</RadioButton>
-            <RadioButton>Igrač</RadioButton>
+            <RadioButton Checked="RadioButtonMenadzer_Checked">Menadžer</RadioButton>
+            <RadioButton Checked="RadioButtonTrener_Checked">Trener</RadioButton>
+            <RadioButton Checked="RadioButtonIgrac_Checked">Igrač</RadioButton>
         </StackPanel>
     </Grid>
 </UserControl>

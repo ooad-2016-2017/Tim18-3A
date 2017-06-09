@@ -17,6 +17,6 @@
         <Border Background="Gainsboro"></Border>
         <Border Grid.Column="1" Background="White"></Border>
         <Image Source="/Images/Icons/User.png"></Image>
-        <TextBox Text="{Binding Path=Username}" Grid.Column="1" x:Name="TextBox" FontSize="10" PlaceholderText ="Username" ></TextBox>
+        <TextBox Text="{Binding Path=Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" x:Name="TextBox" FontSize="10" PlaceholderText ="Username" ></TextBox>
     </Grid>
 </UserControl>

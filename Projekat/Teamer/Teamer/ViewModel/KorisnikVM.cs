@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace Teamer.ViewModel
 {
@@ -15,5 +12,15 @@ namespace Teamer.ViewModel
         public string Password { get; set; }
         public string Username { get; set; }
         public byte[] Slika { get; set; }
+
+        public KorisnikVM(string username, string password, string email, byte[] slika, DateTime datum)
+        {
+            Username = username;
+            Password = password;
+            Email = email;
+            Slika = slika;
+            DatumRodjenja = datum;
+        }
+        public KorisnikVM() { }
     }
 }

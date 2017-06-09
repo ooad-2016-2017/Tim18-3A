@@ -99,6 +99,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Mappers\KorisnikMapper.cs" />
+    <Compile Include="Mappers\PictureConverter.cs" />
     <Compile Include="Migrations\20170526220701_InitialMigration.cs" />
     <Compile Include="Migrations\20170526220701_InitialMigration.designer.cs">
       <DependentUpon>20170526220701_InitialMigration.cs</DependentUpon>
@@ -163,6 +164,7 @@
     <Compile Include="ViewModel\KorisnikVM.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MenadzerVM.cs" />
+    <Compile Include="ViewModel\RegistrationViewModel.cs" />
     <Compile Include="ViewModel\TrenerVM.cs" />
     <Compile Include="View\IgracIzvjestaj.xaml.cs">
       <DependentUpon>IgracIzvjestaj.xaml</DependentUpon>
@@ -378,7 +380,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

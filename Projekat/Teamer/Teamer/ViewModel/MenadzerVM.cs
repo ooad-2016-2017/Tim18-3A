@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Teamer.Models;
+using Windows.UI.Xaml.Controls;
 
 namespace Teamer.ViewModel
 {
     class MenadzerVM : KorisnikVM
     {
+        public MenadzerVM(string username, string password, string email, byte[] slika, DateTime datum) 
+            : base(username, password, email, slika, datum) { }
+        public MenadzerVM() : base() { }
+
         public List<Tim> Timovi { get; set; }
     }
 }
