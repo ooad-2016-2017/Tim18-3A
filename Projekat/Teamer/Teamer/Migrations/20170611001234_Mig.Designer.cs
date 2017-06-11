@@ -7,11 +7,11 @@ using Teamer.Models;
 namespace TeamerMigrations
 {
     [ContextType(typeof(TeamerDbContext))]
-    partial class InitialMigration
+    partial class Mig
     {
         public override string Id
         {
-            get { return "20170526220701_InitialMigration"; }
+            get { return "20170611001234_Mig"; }
         }
 
         public override string ProductVersion
@@ -61,6 +61,8 @@ namespace TeamerMigrations
 
                     b.Property<byte[]>("Slika");
 
+                    b.Property<string>("Sport");
+
                     b.Property<int?>("TimID");
 
                     b.Property<string>("Username")
@@ -75,6 +77,8 @@ namespace TeamerMigrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("DogadjajID");
+
+                    b.Property<int?>("IgracIgracID");
 
                     b.Property<string>("Komentar");
 
@@ -99,6 +103,8 @@ namespace TeamerMigrations
                     b.Property<string>("Prezime");
 
                     b.Property<byte[]>("Slika");
+
+                    b.Property<string>("Sport");
 
                     b.Property<string>("Username")
                         .Required();
@@ -154,6 +160,8 @@ namespace TeamerMigrations
 
                     b.Property<byte[]>("Slika");
 
+                    b.Property<string>("Sport");
+
                     b.Property<int?>("TimID");
 
                     b.Property<string>("Username")
@@ -185,6 +193,10 @@ namespace TeamerMigrations
                     b.Reference("Teamer.Models.Dogadjaj")
                         .InverseCollection()
                         .ForeignKey("DogadjajID");
+
+                    b.Reference("Teamer.Models.Igrac")
+                        .InverseCollection()
+                        .ForeignKey("IgracIgracID");
                 });
 
             builder.Entity("Teamer.Models.Tim", b =>

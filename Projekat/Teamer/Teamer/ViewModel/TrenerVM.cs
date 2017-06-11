@@ -11,8 +11,8 @@ namespace Teamer.ViewModel
     class TrenerVM : KorisnikVM
     {
         public Tim Tim { get; set; }
-        public TrenerVM(string username, string password, string email, byte[] slika, DateTime datum) 
-            : base(username, password, email, slika, datum) { }
+        public TrenerVM(string username, string password, string email, byte[] slika, DateTime datum, string sport) 
+            : base(username, password, email, slika, datum, sport) { }
 
         public TrenerVM() : base () { }
     }

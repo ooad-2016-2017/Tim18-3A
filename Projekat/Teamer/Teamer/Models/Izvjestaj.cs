@@ -17,6 +17,6 @@ namespace Teamer.Models
         string Komentar { get; set; }
         Dogadjaj Dogadjaj { get; set; }
         int DogadjajID { get; set; }
-        //Igrac Igrac { get; set; }
+        Igrac Igrac { get; set; }
     }
 }

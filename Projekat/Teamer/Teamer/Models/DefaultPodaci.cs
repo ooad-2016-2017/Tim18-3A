@@ -56,6 +56,7 @@ namespace Teamer.Models
                         Ime = "Armin",
                         Prezime = "Omerbegovic",
                         Username = "Adza",
+                        Password = "123",
                         DatumRodjenja = DateTime.Now
                     });
                 context.SaveChanges();

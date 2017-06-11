@@ -12,14 +12,16 @@ namespace Teamer.ViewModel
         public string Password { get; set; }
         public string Username { get; set; }
         public byte[] Slika { get; set; }
+        public string Sport { get; set; }
 
-        public KorisnikVM(string username, string password, string email, byte[] slika, DateTime datum)
+        public KorisnikVM(string username, string password, string email, byte[] slika, DateTime datum, string sport)
         {
             Username = username;
             Password = password;
             Email = email;
             Slika = slika;
             DatumRodjenja = datum;
+            Sport = sport;
         }
         public KorisnikVM() { }
     }

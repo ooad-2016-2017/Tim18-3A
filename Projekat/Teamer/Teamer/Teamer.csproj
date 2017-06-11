@@ -98,11 +98,13 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\ComboBoxItemConvert.cs" />
+    <Compile Include="Mappers\DateConverter.cs" />
     <Compile Include="Mappers\KorisnikMapper.cs" />
     <Compile Include="Mappers\PictureConverter.cs" />
-    <Compile Include="Migrations\20170526220701_InitialMigration.cs" />
-    <Compile Include="Migrations\20170526220701_InitialMigration.designer.cs">
-      <DependentUpon>20170526220701_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20170611001234_Mig.cs" />
+    <Compile Include="Migrations\20170611001234_Mig.designer.cs">
+      <DependentUpon>20170611001234_Mig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\TeamerDbContextModelSnapshot.cs" />
     <Compile Include="Models\DefaultPodaci.cs" />
@@ -160,10 +162,12 @@
     <Compile Include="User Controls\username.xaml.cs">
       <DependentUpon>username.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\DogadjajVM.cs" />
     <Compile Include="ViewModel\IgracVM.cs" />
     <Compile Include="ViewModel\KorisnikVM.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MenadzerVM.cs" />
+    <Compile Include="ViewModel\NoviDogadjajViewModel.cs" />
     <Compile Include="ViewModel\RegistrationViewModel.cs" />
     <Compile Include="ViewModel\TrenerVM.cs" />
     <Compile Include="View\IgracIzvjestaj.xaml.cs">

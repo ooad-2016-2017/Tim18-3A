@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Teamer.Models;
 using Windows.UI.Xaml.Controls;
+using Teamer.Mappers;
+using System.Text.RegularExpressions;
 
 namespace Teamer.ViewModel
 {
@@ -17,11 +19,11 @@ namespace Teamer.ViewModel
         private string _username;
         private string _password;
         private string _cpassword;
-        private DateTime _datumRodjenja;
+        private DateTimeOffset _datumRodjenja;
         private string _sport;
         private byte[] _slika;
         private int _tipKorisnika;
-        public KorisnikVM korisnik;
+        KorisnikVM korisnik;
 
         public RegistrationViewModel()
         {
@@ -32,33 +34,49 @@ namespace Teamer.ViewModel
             string greska;
             if ((greska = ProvjeriParametre()).Count() != 0)
             {
+               
                 switch (_tipKorisnika)
                 {
                     case 1:
-                        korisnik = new MenadzerVM(Username, Password, Email, Slika, DatumRodjenja);
+                        var menadzer = new MenadzerVM(Username, Password, Email, Slika, DatumRodjenja.Date, Sport);
+                        context.Menadzeri.Add(menadzer.MapMenadzerVMToMenadzer());
+                        korisnik = menadzer;
+                        context.SaveChanges();
                         break;
                     case 2:
-                        korisnik = new TrenerVM(Username, Password, Email, Slika, DatumRodjenja);
+                        var trener = new TrenerVM(Username, Password, Email, Slika, DatumRodjenja.Date, Sport);
+                        context.Treneri.Add(trener.MapTrenerVMToTrener());
+                        korisnik = trener;
+                        context.SaveChanges();
                         break;
                     case 3:
-                        korisnik = new IgracVM(Username, Password, Email, Slika, DatumRodjenja);
+                        var igrac = new IgracVM(Username, Password, Email, Slika, DatumRodjenja.Date, Sport);
+                        context.Igraci.Add(igrac.MapIgracVMToIgrac());
+                        korisnik = igrac;
+                        context.SaveChanges();
                         break;
                 }
+                
                 return korisnik;
             }
             return null;
         }
+        bool IsValidEmail(string strIn)
+        {
+            return Regex.IsMatch(strIn, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+        }
+
         public string ProvjeriParametre()
         {
             string error = "";
 
-            if (Email == null || Email.Count() == 0) error += "email not entered, ";
-            if (Username.Count() == 0 || Username == null) error += "username not entered, ";
-            if (Password.Count() == 0 || Password == null) error += "password not entered, ";
-            if (Cpassword.Count() == 0 || Cpassword == null) error += "password confirmation not entered";
+            if (Email == null || Email.Count() == 0 || !(IsValidEmail(Email))) error += "email not entered, ";
+            if (Username == null || Username.Count() == 0) error += "username not entered, ";
+            if (Password == null || Password.Count() == 0) error += "password not entered, ";
+            if (Cpassword == null || Cpassword.Count() == 0) error += "password confirmation not entered, ";
             if (Password != Cpassword) error += "passwords don't match, ";
             if (DatumRodjenja == null) error += "birth date is not set, ";
-            if (Sport.Count() == 0 || Sport == null) error += "sport is not selected, ";
+            if (Sport == null || Sport.Count() == 0) error += "sport is not selected, ";
             if (Slika == null) error += "image is not uploaded, ";
             if (_tipKorisnika == 0) error += "user type is not selected";
 
@@ -132,7 +150,7 @@ namespace Teamer.ViewModel
             }
         }
 
-        public DateTime DatumRodjenja
+        public DateTimeOffset DatumRodjenja
         {
             get
             {

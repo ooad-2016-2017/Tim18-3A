@@ -10,8 +10,8 @@ namespace Teamer.ViewModel
 {
     class MenadzerVM : KorisnikVM
     {
-        public MenadzerVM(string username, string password, string email, byte[] slika, DateTime datum) 
-            : base(username, password, email, slika, datum) { }
+        public MenadzerVM(string username, string password, string email, byte[] slika, DateTime datum, string sport) 
+            : base(username, password, email, slika, datum, sport) { }
         public MenadzerVM() : base() { }
 
         public List<Tim> Timovi { get; set; }

@@ -20,7 +20,7 @@ namespace Teamer.Models
         [Required]
         public string Username { get; set; }
         public byte[] Slika { get; set; }
-
+        public string Sport { get; set; }
         public int? TimID { get; set; }
         public Tim Tim { get; set; }
     }

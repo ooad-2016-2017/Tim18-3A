@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Migrations.Operations;
 
 namespace TeamerMigrations
 {
-    public partial class InitialMigration : Migration
+    public partial class Mig : Migration
     {
         public override void Up(MigrationBuilder migration)
         {
@@ -14,13 +14,13 @@ namespace TeamerMigrations
                 columns: table => new
                 {
                     MenadzerID = table.Column(type: "INTEGER", nullable: false),
-                        //.Annotation("Sqlite:Autoincrement", true),
                     DatumRodjenja = table.Column(type: "TEXT", nullable: false),
                     Email = table.Column(type: "TEXT", nullable: true),
                     Ime = table.Column(type: "TEXT", nullable: true),
                     Password = table.Column(type: "TEXT", nullable: true),
                     Prezime = table.Column(type: "TEXT", nullable: true),
                     Slika = table.Column(type: "BLOB", nullable: true),
+                    Sport = table.Column(type: "TEXT", nullable: true),
                     Username = table.Column(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
@@ -32,7 +32,6 @@ namespace TeamerMigrations
                 columns: table => new
                 {
                     TipDogadjajaID = table.Column(type: "INTEGER", nullable: false),
-                        //.Annotation("Sqlite:Autoincrement", true),
                     Kategorija = table.Column(type: "TEXT", nullable: true),
                     Kod = table.Column(type: "TEXT", nullable: true),
                     Opis = table.Column(type: "TEXT", nullable: true)
@@ -46,7 +45,6 @@ namespace TeamerMigrations
                 columns: table => new
                 {
                     TimID = table.Column(type: "INTEGER", nullable: false),
-                        //.Annotation("Sqlite:Autoincrement", true),
                     ManagerID = table.Column(type: "INTEGER", nullable: false),
                     Naziv = table.Column(type: "TEXT", nullable: false),
                     Slika = table.Column(type: "BLOB", nullable: true),
@@ -66,7 +64,6 @@ namespace TeamerMigrations
                 columns: table => new
                 {
                     DogadjajID = table.Column(type: "INTEGER", nullable: false),
-                        //.Annotation("Sqlite:Autoincrement", true),
                     DatumDogadjaja = table.Column(type: "TEXT", nullable: false),
                     GeoDuzina = table.Column(type: "REAL", nullable: false),
                     GeoSirina = table.Column(type: "REAL", nullable: false),
@@ -93,13 +90,13 @@ namespace TeamerMigrations
                 columns: table => new
                 {
                     IgracID = table.Column(type: "INTEGER", nullable: false),
-                        //.Annotation("Sqlite:Autoincrement", true),
                     DatumRodjenja = table.Column(type: "TEXT", nullable: false),
                     Email = table.Column(type: "TEXT", nullable: true),
                     Ime = table.Column(type: "TEXT", nullable: true),
                     Password = table.Column(type: "TEXT", nullable: true),
                     Prezime = table.Column(type: "TEXT", nullable: true),
                     Slika = table.Column(type: "BLOB", nullable: true),
+                    Sport = table.Column(type: "TEXT", nullable: true),
                     TimID = table.Column(type: "INTEGER", nullable: true),
                     Username = table.Column(type: "TEXT", nullable: false)
                 },
@@ -117,13 +114,13 @@ namespace TeamerMigrations
                 columns: table => new
                 {
                     TrenerID = table.Column(type: "INTEGER", nullable: false),
-                        //.Annotation("Sqlite:Autoincrement", true),
                     DatumRodjenja = table.Column(type: "TEXT", nullable: false),
                     Email = table.Column(type: "TEXT", nullable: true),
                     Ime = table.Column(type: "TEXT", nullable: true),
                     Password = table.Column(type: "TEXT", nullable: true),
                     Prezime = table.Column(type: "TEXT", nullable: true),
                     Slika = table.Column(type: "BLOB", nullable: true),
+                    Sport = table.Column(type: "TEXT", nullable: true),
                     TimID = table.Column(type: "INTEGER", nullable: true),
                     Username = table.Column(type: "TEXT", nullable: false)
                 },
@@ -141,8 +138,8 @@ namespace TeamerMigrations
                 columns: table => new
                 {
                     IzvjestajID = table.Column(type: "INTEGER", nullable: false),
-                        //.Annotation("Sqlite:Autoincrement", true),
                     DogadjajID = table.Column(type: "INTEGER", nullable: false),
+                    IgracIgracID = table.Column(type: "INTEGER", nullable: true),
                     Komentar = table.Column(type: "TEXT", nullable: true),
                     Ocjena = table.Column(type: "INTEGER", nullable: false)
                 },
@@ -154,17 +151,22 @@ namespace TeamerMigrations
                         columns: x => x.DogadjajID,
                         referencedTable: "Dogadjaj",
                         referencedColumn: "DogadjajID");
+                    table.ForeignKey(
+                        name: "FK_Izvjestaj_Igrac_IgracIgracID",
+                        columns: x => x.IgracIgracID,
+                        referencedTable: "Igrac",
+                        referencedColumn: "IgracID");
                 });
         }
 
         public override void Down(MigrationBuilder migration)
         {
-            migration.DropTable("Igrac");
             migration.DropTable("Izvjestaj");
             migration.DropTable("Trener");
             migration.DropTable("Dogadjaj");
-            migration.DropTable("Tim");
+            migration.DropTable("Igrac");
             migration.DropTable("TipDogadjaja");
+            migration.DropTable("Tim");
             migration.DropTable("Menadzer");
         }
     }
